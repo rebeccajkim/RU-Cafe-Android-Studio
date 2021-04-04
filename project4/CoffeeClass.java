@@ -9,7 +9,7 @@ public class CoffeeClass extends MenuItem implements Customizable {
 	
 	public CoffeeClass(String size) {
 		this.size = size;
-		addins = new ArrayList<String>(0);
+		addins = new ArrayList<String>();
 	}
 	
 	public boolean add(Object obj) { 

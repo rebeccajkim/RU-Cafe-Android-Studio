@@ -1,5 +1,5 @@
 package project4;
-
+	
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -15,6 +15,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
+			primaryStage.setTitle("RU Cafe");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
