@@ -38,7 +38,7 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <Button fx:id="addToOrder" layoutX="268.0" layoutY="424.0" mnemonicParsing="false" text="Add to Order" />
+            <Button fx:id="addToOrder" layoutX="268.0" layoutY="424.0" mnemonicParsing="false" onAction="#addOrderButton" text="Add to Order" />
          </children>
       </AnchorPane>
    </top>

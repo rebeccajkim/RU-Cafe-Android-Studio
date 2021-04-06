@@ -1,5 +1,3 @@
-package project4;
-
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
@@ -7,19 +5,24 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
+//import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+This class is the controller than implements the Donut Menu GUI. The Donut 
+Menu has options of adding different types of donuts, choosing unique flavors, 
+choosing a quantity, and adding it all to the customers order. The total price 
+is displayed depending on the changes made as soon as a customer starts their
+order. There is also an option to add and remove the donut order as the customer
+may please.
+@author mayeesha, rebecca
+*/
 public class DonutOrderController implements Initializable{
 	
 	private boolean alrSelected;
@@ -45,8 +48,7 @@ public class DonutOrderController implements Initializable{
 	    		FXCollections.observableArrayList("jelly", "chocolate frosted", "strawberry frosted", "sugar", "lemon filled");
 	 @FXML
 	 private ListView<String> displayListView;
-	 protected ObservableList<String> displayDonList = 
-	    		FXCollections.observableArrayList(donutType + "(" + quanString +")");
+	
 	 
 	 @FXML
 	 private ComboBox <String> selectDonutType;
@@ -58,6 +60,11 @@ public class DonutOrderController implements Initializable{
 	 protected ObservableList<Integer> numDonItems = 
 	    		FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 	 
+	 /** 
+     This method initializes the combo boxes and list views with
+     items. 
+     @param location, resources
+     */
 	 @Override
 	 public void initialize(URL location, ResourceBundle resources) {
 		 numberOfDonut.setItems(numDonItems);
@@ -98,7 +105,7 @@ public class DonutOrderController implements Initializable{
 	 
 	 @FXML
 	    /** 
-	     Action Event Handler when getting the coffee quantity
+	     Action Event Handler when selecting donut quantity
 	     @param event
 	     */
 	    void donutAmountAction(ActionEvent event) {
@@ -112,12 +119,14 @@ public class DonutOrderController implements Initializable{
 	 
 	 @FXML
 	    /** 
-	     Action Event Handler when getting the coffee quantity
+	     Action Event Handler for the button that adds a 
+	     donut order to the list.
 	     @param event
 	     */
 	    void addDonutButtonAction(ActionEvent event) {
-		 
-		 //selectListView.setItems(displayDonList);
+		 ObservableList<String> displayDonList = 
+		    		FXCollections.observableArrayList(donutType + "(" + donQuantity + ")");
+		 displayListView.setItems(displayDonList);
 
 	    }
 	 

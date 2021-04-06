@@ -9,10 +9,11 @@ public class DonutClass extends MenuItem {
 	private String donutType;
 	
 	/**
-	This constructor takes the type of donut and sets the donutType as that type.
-	@param donut type
+	This constructor takes the quantity, price, and type of donut to make a donut object.
+	@param quantity, price, donut type
 	*/
-	public DonutClass(String donutType) {
+	public DonutClass(int quantity, double price, String donutType) {
+		super(quantity, price);
 		this.donutType = donutType;
 	}
 	
@@ -49,5 +50,13 @@ public class DonutClass extends MenuItem {
 		if (getQuantity() >= 1) {
 			setPrice(getPrice() * getQuantity());
 		}
+	}
+	
+	/**
+	The method creates a string description of a donut object.
+	*/
+	@Override
+	public String toString() { 
+		return donutType + "(" + String.valueOf(getQuantity()) + ")";
 	}
 }

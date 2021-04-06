@@ -86,16 +86,11 @@ public class StoreOrdersController implements Initializable {
 		 for (int j = 0; j < order.getItems().size(); j++) {
 			 if (order.getItems().get(j) instanceof DonutClass) {
 				 DonutClass don = (DonutClass) order.getItems().get(j);
-				 displayList.add(don.getDonutType() + "(" + String.valueOf(don.getQuantity()) + ")");
+				 displayList.add(don.toString());
 			 }
 			 else if (order.getItems().get(j) instanceof CoffeeClass) {
 				 CoffeeClass cof = (CoffeeClass) order.getItems().get(j);
-				 String addinDisp = "";
-				 for (int k = 0; k < cof.getAddins().size()-1; k++) {
-					 addinDisp = addinDisp + cof.getAddins().get(k) + ",";
-				 }
-				 displayList.add("Coffee" + String.valueOf(cof.getQuantity()) + ") " + cof.getSize() 
-					 	+ " [" + addinDisp + cof.getAddins().get(cof.getAddins().size()-1) + "]");
+				 displayList.add(cof.toString());
 			 }
 		}
 		 }

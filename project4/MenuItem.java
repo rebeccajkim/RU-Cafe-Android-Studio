@@ -19,6 +19,15 @@ public class MenuItem {
 	}
 	
 	/**
+	This constructor makes a menu item with the quantity and price desired.
+	@param quantity, price
+	*/
+	public MenuItem(int quantity, double price) {
+		this.quantity = quantity;
+		this.price = price;
+	}
+	
+	/**
 	Getter method for the quantity of an item so the value can be used in other classes.
 	@return quantity of item
 	*/
@@ -77,14 +86,12 @@ public class MenuItem {
 	*/
 	
 	/**
-	The method creates a string description of an employee and refers to the profile toString 
-	method to apply polymorphism in order to to print the output without repetitive code
+	The method creates a string description of a menu item.
 	@return string description
 	*/
-	/*
-	@Override  
+	@Override
 	public String toString() { 
-		return profile.toString();
-	} 
-	*/
+		return "";
+	}
+	
 }

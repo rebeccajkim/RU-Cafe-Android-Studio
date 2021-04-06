@@ -21,6 +21,17 @@ public class OrderClass implements Customizable { //**order number and specific 
 	private double total;
 	
 	/**
+	The constructor sets default values for the instance variables.
+	 */
+	public OrderClass() {
+		itemList = new ArrayList<MenuItem>();
+		orderNumber = 0;
+		subtotal = 0;
+		salestax = 0;
+		total = 0;
+	}
+	
+	/**
 	This constructor takes the order number and creates an arraylist of menu items and sets the totals
 	to 0.
 	@param order number
@@ -28,6 +39,18 @@ public class OrderClass implements Customizable { //**order number and specific 
 	public OrderClass(int orderNumber) {
 		itemList = new ArrayList<MenuItem>();
 		this.orderNumber = orderNumber;
+		subtotal = 0;
+		salestax = 0;
+		total = 0;
+	}
+	
+	/**
+	This constructor takes the arraylist of items and creates and sets the totals and order number to 0.
+	@param list of items
+	*/
+	public OrderClass(ArrayList<MenuItem> itemList) {
+		this.itemList = itemList;
+		orderNumber = 0;
 		subtotal = 0;
 		salestax = 0;
 		total = 0;
@@ -77,7 +100,7 @@ public class OrderClass implements Customizable { //**order number and specific 
 	}
 	
 	/**
-	Setter method for the order number so the value can be used in other classes.
+	Setter method for the order number so the value can be set from other classes.
 	@return order number
 	*/
 	public void setOrderNumber(int orderNumber) { 
@@ -108,6 +131,13 @@ public class OrderClass implements Customizable { //**order number and specific 
 		return total;
 	}
 	
+	/**
+	Setter method for the total of an order so the value can be set from other classes.
+	*/
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	
 	/*
 	This method calculates the subtotal, sales tax, and total for an order.
 	*/
@@ -130,16 +160,11 @@ public class OrderClass implements Customizable { //**order number and specific 
 			for (int i = 0; i < itemList.size(); i++) {
 				 if (itemList.get(i) instanceof DonutClass) {
 					 DonutClass don = (DonutClass) itemList.get(i);
-					 writer.append(don.getDonutType() + "(" + String.valueOf(don.getQuantity()) + ")");
+					 writer.append(don.toString());
 				 }
 				 else if (itemList.get(i) instanceof CoffeeClass) {
 					 CoffeeClass cof = (CoffeeClass) itemList.get(i);
-					 String addinDisp = "";
-					 for (int j = 0; j < cof.getAddins().size()-1; j++) {
-						 addinDisp = addinDisp + cof.getAddins().get(j) + ",";
-					 }
-					 writer.append("Coffee" + String.valueOf(cof.getQuantity()) + ") " + cof.getSize() 
-						 	+ " [" + addinDisp + cof.getAddins().get(cof.getAddins().size()-1) + "]");
+					 writer.append(cof.toString());
 				 }
 			 }
 			writer.close();

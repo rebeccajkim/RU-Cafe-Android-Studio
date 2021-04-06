@@ -26,6 +26,19 @@ public class CoffeeClass extends MenuItem implements Customizable {
 	}
 	
 	/**
+	This constructor takes the size of the coffee, quantity, arraylist of add-ins, and price to make a coffee object.
+	@param coffeeSize
+	@param quantity
+	@param addins
+	@param price
+	*/
+	public CoffeeClass(String coffeeSize, int quantity, ArrayList<String> addins, double price) {
+		super(quantity, price);
+		this.size = coffeeSize;
+		this.addins = addins;
+	}
+	
+	/**
 	This method adds an add-in to the add-ins arraylist.
 	@param add-in
 	@return true if obj was a String add-in, false if not
@@ -100,5 +113,17 @@ public class CoffeeClass extends MenuItem implements Customizable {
 		if (getQuantity() >= 1) {
 			setPrice(getPrice() * getQuantity());
 		}
+	}
+	
+	/**
+	The method creates a string description of a coffee object.
+	*/
+	@Override
+	public String toString() { 
+		String addinDisp = "";
+		for (int k = 0; k < addins.size()-1; k++) {
+			addinDisp = addinDisp + addins.get(k) + ",";
+		}
+		return "Coffee" + String.valueOf(getQuantity()) + ") " + size + " [" + addinDisp + addins.get(addins.size()-1) + "]";
 	}
 }
