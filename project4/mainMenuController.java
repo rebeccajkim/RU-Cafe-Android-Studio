@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class mainMenuController { //****should work on controllers at least even if cant figure out fxml/gui
+public class mainMenuController {
 
     @FXML
     private Button donutButton, coffeeButton, yourOrderButton, storeOrdersButton;
@@ -20,6 +20,25 @@ public class mainMenuController { //****should work on controllers at least even
     
     Alert errorAlert = new Alert(Alert.AlertType.ERROR);
     Stage stage = new Stage();
+    
+    @FXML
+    /** 
+     * Mouse Event Handler when clicking Donut Button 
+     @param event
+     */
+    void coffeeMouseClick(MouseEvent event) {
+    	try {
+    		Parent root = FXMLLoader.load(getClass().getResource("CoffeeOrder.fxml"));
+    		stage.setTitle("Coffee Order Menu");
+    		stage.setScene(new Scene(root, 500, 500));
+    		stage.show();
+    	} catch (Exception e) {
+    		errorAlert.setHeaderText("Error");
+    		errorAlert.setContentText("Your coffee menu cannot be loaded. Please try again.");
+    		errorAlert.show();
+    	}
+    	
+    }
     
     @FXML
     /** 
@@ -35,6 +54,45 @@ public class mainMenuController { //****should work on controllers at least even
     	} catch (Exception e) {
     		errorAlert.setHeaderText("Error");
     		errorAlert.setContentText("Your donut menu cannot be loaded. Please try again.");
+    		errorAlert.show();
+    		System.out.println("your exception:" + e);
+    	}
+    	
+    }
+    
+    @FXML
+    /** 
+     * Mouse Event Handler when clicking Your Order Button 
+     @param event
+     */
+    void yourOrderClick(MouseEvent event) {
+    	try {
+    		Parent root = FXMLLoader.load(getClass().getResource("YourOrder.fxml"));
+    		stage.setTitle("Your Order Menu");
+    		stage.setScene(new Scene(root, 500, 500));
+    		stage.show();
+    	} catch (Exception e) {
+    		errorAlert.setHeaderText("Error");
+    		errorAlert.setContentText("Your order menu cannot be loaded. Please try again.");
+    		errorAlert.show();
+    	}
+    	
+    }
+    
+    @FXML
+    /** 
+    Mouse Event Handler when clicking Your Order Button 
+    @param event
+    */
+    void storeOrdersClick(MouseEvent event) {
+    	try {
+    		Parent root = FXMLLoader.load(getClass().getResource("StoreOrders.fxml"));
+    		stage.setTitle("Your Store Orders");
+    		stage.setScene(new Scene(root, 500, 500));
+    		stage.show();
+    	} catch (Exception e) {
+    		errorAlert.setHeaderText("Error");
+    		errorAlert.setContentText("Your store orders cannot be loaded. Please try again.");
     		errorAlert.show();
     	}
     	

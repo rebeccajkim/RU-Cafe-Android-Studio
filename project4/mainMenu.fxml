@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="560.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.mainMenuController">
+   <top>
+      <AnchorPane prefHeight="559.0" prefWidth="500.0" style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="coffeeButton" layoutX="37.0" layoutY="98.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#coffeeMouseClick" prefHeight="65.0" prefWidth="65.0">
+               <graphic>
+                  <ImageView fitHeight="103.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../70a3a9bff6701cdc19308261874b6052.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="donutButton" layoutX="289.0" layoutY="98.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#donutMouseClick" prefHeight="65.0" prefWidth="65.0">
+               <graphic>
+                  <ImageView fitHeight="71.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../reward-doughnut.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="yourOrderButton" contentDisplay="CENTER" layoutX="37.0" layoutY="214.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#yourOrderClick" prefHeight="65.0" prefWidth="65.0">
+               <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../istockphoto-1206806317-612x612.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="storeOrdersButton" contentDisplay="CENTER" layoutX="289.0" layoutY="214.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#storeOrdersClick" prefHeight="65.0" prefWidth="65.0">
+               <graphic>
+                  <ImageView fitHeight="98.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../260-2606116_next-day-animations-clipboard-png-cartoon-transparent-png.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Text fx:id="orderDonut" layoutX="265.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Donuts">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font></Text>
+            <Text fx:id="orderCoffee" layoutX="21.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Coffee">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font></Text>
+            <Text fill="#d16a7b" layoutX="118.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU">
+               <font>
+                  <Font name="Franklin Gothic Heavy" size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="28.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Order">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="268.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Store Orders">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CoffeeOrderController">
+   <top>
+      <AnchorPane prefHeight="505.0" prefWidth="500.0" style="-fx-background-color: beige;" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="35.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ORDERING COFFEE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <CheckBox fx:id="milkBox" layoutX="35.0" layoutY="174.0" mnemonicParsing="false" text="Milk" />
+            <CheckBox fx:id="creamBox" layoutX="36.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#creamCheckClick" text="Cream" />
+            <CheckBox fx:id="syrupBox" layoutX="160.0" layoutY="126.0" mnemonicParsing="false" text="Syrup" />
+            <CheckBox fx:id="caramelBox" layoutX="161.0" layoutY="174.0" mnemonicParsing="false" text="Caramel" />
+            <CheckBox fx:id="whipCreamBox" layoutX="35.0" layoutY="229.0" mnemonicParsing="false" text="Whipped Cream" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="286.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../white-coffee-cup-roasted-coffee-beans-around_35570-794.jpg" />
+               </image>
+            </ImageView>
+            <ComboBox fx:id="selectCoffeeType" layoutX="236.0" layoutY="225.0" onAction="#coffeeTypeAction" prefWidth="150.0" promptText="Type?" />
+            <ComboBox fx:id="numberOfCoffee" layoutX="236.0" layoutY="292.0" onAction="#coffeeAmountAction" prefWidth="150.0" promptText="How many?" />
+            <TextField fx:id="coffeeTotalField" layoutX="237.0" layoutY="363.0" />
+            <Text layoutX="153.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="268.0" layoutY="424.0" mnemonicParsing="false" text="Add to Order" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

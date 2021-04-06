@@ -1,6 +1,12 @@
 package project4;
 
-public class MenuItem { //****copied from proj 2 cuz lazy so need to change comments etc **SPACES
+/**
+The MenuItem class is the superclass to DonutClass and CoffeeClass that has the instance variables
+and methods that donuts and coffee would both need to have (like quantity and price).
+@author mayeesha, rebecca
+*/
+public class MenuItem {
+	private int quantity;
 	private double price;
 
 	/**
@@ -8,7 +14,24 @@ public class MenuItem { //****copied from proj 2 cuz lazy so need to change comm
 	be set in the subclasses.
 	*/
 	public MenuItem() {
+		quantity = 0;
 		price = 0;
+	}
+	
+	/**
+	Getter method for the quantity of an item so the value can be used in other classes.
+	@return quantity of item
+	*/
+	public int getQuantity() { 
+		return quantity;
+	}
+	
+	/**
+	Setter method for the quantity of an item so the value can be set in other classes
+	@param item quantity
+	*/
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 	/**
