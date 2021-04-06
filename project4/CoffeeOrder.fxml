@@ -20,25 +20,25 @@
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
             </Text>
-            <CheckBox fx:id="milkBox" layoutX="35.0" layoutY="174.0" mnemonicParsing="false" text="Milk" />
-            <CheckBox fx:id="creamBox" layoutX="36.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#creamCheckClick" text="Cream" />
-            <CheckBox fx:id="syrupBox" layoutX="160.0" layoutY="126.0" mnemonicParsing="false" text="Syrup" />
-            <CheckBox fx:id="caramelBox" layoutX="161.0" layoutY="174.0" mnemonicParsing="false" text="Caramel" />
-            <CheckBox fx:id="whipCreamBox" layoutX="35.0" layoutY="229.0" mnemonicParsing="false" text="Whipped Cream" />
+            <CheckBox fx:id="milkBox" layoutX="119.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#milkCheckClick" text="Milk" />
+            <CheckBox fx:id="creamBox" layoutX="347.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#creamCheckClick" text="Cream" />
+            <CheckBox fx:id="syrupBox" layoutX="224.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#syrupCheckClick" text="Syrup" />
+            <CheckBox fx:id="caramelBox" layoutX="261.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#caramelCheckClick" text="Caramel" />
+            <CheckBox fx:id="whipCreamBox" layoutX="48.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#whipCreamCheckClick" text="Whipped Cream" />
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="286.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../white-coffee-cup-roasted-coffee-beans-around_35570-794.jpg" />
                </image>
             </ImageView>
-            <ComboBox fx:id="selectCoffeeType" layoutX="236.0" layoutY="225.0" onAction="#coffeeTypeAction" prefWidth="150.0" promptText="Type?" />
-            <ComboBox fx:id="numberOfCoffee" layoutX="236.0" layoutY="292.0" onAction="#coffeeAmountAction" prefWidth="150.0" promptText="How many?" />
+            <ComboBox fx:id="selectCoffeeType" layoutX="44.0" layoutY="95.0" onAction="#coffeeTypeAction" prefWidth="150.0" promptText="Type?" />
+            <ComboBox fx:id="numberOfCoffee" layoutX="44.0" layoutY="161.0" onAction="#coffeeAmountAction" prefWidth="150.0" promptText="How many?" />
             <TextField fx:id="coffeeTotalField" layoutX="237.0" layoutY="363.0" />
             <Text layoutX="153.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: ">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Button layoutX="268.0" layoutY="424.0" mnemonicParsing="false" text="Add to Order" />
+            <Button fx:id="addToOrder" layoutX="268.0" layoutY="424.0" mnemonicParsing="false" text="Add to Order" />
          </children>
       </AnchorPane>
    </top>

@@ -97,6 +97,8 @@ public class CoffeeClass extends MenuItem implements Customizable {
 			setPrice(getPrice() + 3.49);
 		}
 		setPrice(getPrice() + addins.size() * 0.20);
-		setPrice(getPrice() * getQuantity());
+		if (getQuantity() >= 1) {
+			setPrice(getPrice() * getQuantity());
+		}
 	}
 }

@@ -1,6 +1,10 @@
 package project4;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.ArrayList; //**says quantity so is it like 2 of the exact same coffee?? then have to equal and add to quantity
+
+import project3.IOException;
 
 /**
 The OrderClass implements the Customizable interface so there's methods to add and
@@ -65,6 +69,22 @@ public class OrderClass implements Customizable { //**order number and specific 
 	}
 	
 	/**
+	Getter method for the order number so the value can be used in other classes.
+	@return order number
+	*/
+	public int getOrderNumber() { 
+		return orderNumber;
+	}
+	
+	/**
+	Setter method for the order number so the value can be used in other classes.
+	@return order number
+	*/
+	public void setOrderNumber(int orderNumber) { 
+		this.orderNumber = orderNumber;
+	}
+	
+	/**
 	Getter method for the subtotal of an order so the value can be used in other classes.
 	@return subtotal of order
 	*/
@@ -97,6 +117,35 @@ public class OrderClass implements Customizable { //**order number and specific 
 		}
 		salestax = subtotal * 0.06625;
 		total = subtotal + salestax;
+	}
+	
+	/**
+	The method exports the order to a path of a file to help it be saved/exported to that file.
+	@param path of the file
+	*/
+	public void exportOrder(String path) {
+		try {
+			FileWriter write = new FileWriter(path);
+			BufferedWriter writer = new BufferedWriter(write);
+			for (int i = 0; i < itemList.size(); i++) {
+				 if (itemList.get(i) instanceof DonutClass) {
+					 DonutClass don = (DonutClass) itemList.get(i);
+					 writer.append(don.getDonutType() + "(" + String.valueOf(don.getQuantity()) + ")");
+				 }
+				 else if (itemList.get(i) instanceof CoffeeClass) {
+					 CoffeeClass cof = (CoffeeClass) itemList.get(i);
+					 String addinDisp = "";
+					 for (int j = 0; j < cof.getAddins().size()-1; j++) {
+						 addinDisp = addinDisp + cof.getAddins().get(j) + ",";
+					 }
+					 writer.append("Coffee" + String.valueOf(cof.getQuantity()) + ") " + cof.getSize() 
+						 	+ " [" + addinDisp + cof.getAddins().get(cof.getAddins().size()-1) + "]");
+				 }
+			 }
+			writer.close();
+		}
+		catch (IOException e) {
+		}
 	}
 	
 }

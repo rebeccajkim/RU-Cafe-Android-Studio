@@ -37,15 +37,17 @@ public class DonutClass extends MenuItem {
 	*/
 	@Override
 	public void itemPrice() {
-		if (donutType.equals("Yeast")) {
+		if (donutType.equals("Yeast Donut")) {
 			setPrice(1.39);
 		}
-		else if (donutType.equals("Cake")) {
+		else if (donutType.equals("Cake Donut")) {
 			setPrice(1.59);
 		}
-		else if (donutType.equals("Hole")) {
+		else if (donutType.equals("Donut Hole")) {
 			setPrice(0.33);
 		}
-		setPrice(getPrice() * getQuantity());
+		if (getQuantity() >= 1) {
+			setPrice(getPrice() * getQuantity());
+		}
 	}
 }
