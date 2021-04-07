@@ -240,7 +240,7 @@ public class CoffeeOrderController implements Initializable{
 	    mMenuController.addToOrder(order);
 		coffeeTotalField.setText("Order Added!");
 		
-		coffee
+		order
 		
 
 	    }

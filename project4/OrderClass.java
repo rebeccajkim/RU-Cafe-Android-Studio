@@ -1,10 +1,7 @@
 package project4;
 
 import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.util.ArrayList; //**says quantity so is it like 2 of the exact same coffee?? then have to equal and add to quantity
-
-import project3.IOException;
 
 /**
 The OrderClass implements the Customizable interface so there's methods to add and

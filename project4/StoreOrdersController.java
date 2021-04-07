@@ -16,9 +16,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField; //*******just copied imports from coffeeorder so fix later
 import javafx.scene.input.MouseEvent;
-import project3.ExtensionFilter;
-import project3.FileChooser;
-import project3.Stage;
 
 public class StoreOrdersController implements Initializable { 
 	
