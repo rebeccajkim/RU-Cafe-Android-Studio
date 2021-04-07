@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 /**
-This class is the controller than implements the Coffee Menu GUI. The Coffee 
+This class is the controller that implements the Coffee Menu GUI. The Coffee 
 Menu has options of adding add ins, choosing a type, choosing a quantity, and
 adding everything to the customers order. The total price is displayed depending
 on the changes made as soon as a customer starts their coffee order.
@@ -55,6 +55,10 @@ public class CoffeeOrderController implements Initializable{
 	    		FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 
+	 /**
+	 This method sets the main menu controller as the controller in the argument.
+	 @param controller
+	 */
 	 public void setMainMenu(mainMenuController controller){
 	 mMenuController = controller;
 	 }

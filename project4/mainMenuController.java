@@ -35,12 +35,17 @@ public class mainMenuController {
 	    Stage stage = new Stage();
 	    
 	    
-	    
+	/**
+	This default controller makes a new order object.
+	*/
 	public mainMenuController() {
 	  this.order = new OrderClass(new ArrayList<>());
 	}
 
-    
+    /**
+    This method adds to the order of menu items.
+    @param order
+    */
     public void addToOrder(OrderClass menuItems){
         for(MenuItem item: menuItems.getItems()){
             System.out.println("The item in add mainorder method is "+ item);
@@ -55,10 +60,17 @@ public class mainMenuController {
         }
     }
     
+    /**
+    Getter method to return the order.
+    @return order
+    */
     public OrderClass getOrder(){
         return order;
     }
     
+    /**
+    This method places the order and moves on to another new order.
+    */
     public void placeOrder(){
         totalOrders.add(order);
         order.setIncrement();
@@ -68,7 +80,7 @@ public class mainMenuController {
     
     @FXML
     /** 
-     * Mouse Event Handler when clicking Coffee Button 
+     Mouse Event Handler when clicking Coffee Button 
      @param event
      */
     void coffeeMouseClick(MouseEvent event) {

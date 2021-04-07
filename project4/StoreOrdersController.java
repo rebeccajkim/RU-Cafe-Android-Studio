@@ -17,6 +17,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField; //*******just copied imports from coffeeorder so fix later
 import javafx.scene.input.MouseEvent;
 
+/**
+This class is the controller for the StoreOrders window where a user can choose an order out of all the
+orders and see the total, cancel it, or export it.
+@author mayeesha, rebecca
+*/
 public class StoreOrdersController implements Initializable { 
 	
 	public mainMenuController mMenuController;
@@ -50,16 +55,29 @@ public class StoreOrdersController implements Initializable {
 	 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
 	    Stage stage = new Stage();
 	 
+	 /**
+	 This method sets the main menu controller as the one in the argument.
+	 @param controller
+	 */
 	 public void setMainMenu(mainMenuController controller){
 		 mMenuController = controller;
 	}
 	 
+	 /**
+     This method initializes the combo boxes and list views with
+     items. 
+     @param location, resources
+     */
 	 @Override
 	 public void initialize(URL location, ResourceBundle resources) {
 		 orderNum.setItems(ordNum);
 		 displayListView.setItems(displayOrdersList);
 	 }
 	 
+	 /**
+	 This method sets the combo box to have the different order numbers in the list of all orders
+	 so the user can later select one order to look at.
+	 */
 	 @FXML
 	 void orderNumberList() {
 		 try {
@@ -74,7 +92,7 @@ public class StoreOrdersController implements Initializable {
 	 
 	 @FXML
 	    /** 
-	     Action Event Handler when choosing an order number to look at.
+	     Action Event Handler when choosing an order number to look at and see the total.
 	     @param event
 	     */
 	    void orderNumChosen(ActionEvent event) {
