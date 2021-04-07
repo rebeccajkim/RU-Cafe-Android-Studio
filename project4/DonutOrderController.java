@@ -1,3 +1,5 @@
+package project4;
+
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
@@ -11,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 //import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -30,6 +33,7 @@ public class DonutOrderController implements Initializable{
 	private int donQuantity;
 	String quanString = String.valueOf(donQuantity);
 	private double finalPrice;
+	int count = 1;
 	DecimalFormat decimal = new DecimalFormat("0.00");
 
 		
@@ -40,15 +44,17 @@ public class DonutOrderController implements Initializable{
 	private TextField donutTotalField;
 	
     @FXML
-	private Button addDonutButton;
+	private Button addDonutButton, removeDonutButton;
     
 	 @FXML
 	 private ListView<String> selectListView;
 	 protected ObservableList<String> typeDonList = 
-	    		FXCollections.observableArrayList("jelly", "chocolate frosted", "strawberry frosted", "sugar", "lemon filled");
+	    		FXCollections.observableArrayList("jelly","chocolate frosted","strawberry frosted", "sugar", "lemon filled");
 	 @FXML
 	 private ListView<String> displayListView;
-	
+	 
+	 ObservableList<String> selectedFlavor = 
+			 FXCollections.observableArrayList();
 	 
 	 @FXML
 	 private ComboBox <String> selectDonutType;
@@ -120,15 +126,41 @@ public class DonutOrderController implements Initializable{
 	 @FXML
 	    /** 
 	     Action Event Handler for the button that adds a 
-	     donut order to the list.
+	     donut flavor order to the list.
 	     @param event
 	     */
 	    void addDonutButtonAction(ActionEvent event) {
-		 ObservableList<String> displayDonList = 
-		    		FXCollections.observableArrayList(donutType + "(" + donQuantity + ")");
-		 displayListView.setItems(displayDonList);
+			
+		 selectedFlavor.add(selectListView.getSelectionModel().getSelectedItem());
+		 displayListView.setItems(selectedFlavor);
 
 	    }
+	 
+	 @FXML
+	    /** 
+	     Action Event Handler for the button that removes a 
+	     donut flavor order to the list.
+	     @param event
+	     */
+	    void removeDonutButtonMouse(MouseEvent event) {
+		 selectedFlavor.remove(selectListView.getSelectionModel().getSelectedItem());
+		 displayListView.setItems(selectedFlavor);
+
+	    }
+	 
+	 
+	 @FXML
+	    /** 
+	     Action Event Handler for the button that removes a 
+	     donut flavor order to the list.
+	     @param event
+	     */
+	    void addToOrderClick(MouseEvent event) {
+		 
+
+	    }
+	 
+	 
 	 
 	 
 	 

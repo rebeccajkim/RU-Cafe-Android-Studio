@@ -22,24 +22,24 @@ public class mainMenuController {
 	
 	
 	private OrderClass order;
-	private double finalPrice; 
-	private int orderNumber;
-    @FXML
-    private Button donutButton, coffeeButton, yourOrderButton, storeOrdersButton;
-    @FXML
-    private Text orderDonut, orderCoffee;
-    
-    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-    Stage stage = new Stage();
-    
-    
-    public mainMenuController() {
-        this.order = new OrderClass(new ArrayList<>());
-    }
-    
-    public OrderClass getOrder(){
-        return order;
-    }
+	private StoreOrders totalOrders;
+	protected double finalPrice = 0; 
+	protected int orderNumber = 0;
+	
+	 @FXML
+	    private Button donutButton, coffeeButton, yourOrderButton, storeOrdersButton;
+	    @FXML
+	    private Text orderDonut, orderCoffee;
+	
+	 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+	    Stage stage = new Stage();
+	    
+	    
+	    
+	public mainMenuController() {
+	  this.order = new OrderClass(new ArrayList<>());
+	}
+
     
     public void addToOrder(OrderClass menuItems){
         for(MenuItem item: menuItems.getItems()){
@@ -52,10 +52,19 @@ public class mainMenuController {
                finalPrice = finalPrice + ((DonutClass) item).getPrice();
            }
             order.setTotalPrice(finalPrice);
-            System.out.println("printing the order" + order);
         }
- 
     }
+    
+    public OrderClass getOrder(){
+        return order;
+    }
+    
+    public void placeOrder(){
+        totalOrders.add(order);
+        order.setIncrement();
+        this.order = new OrderClass(new ArrayList<>());
+    }
+    
     
     @FXML
     /** 
@@ -111,6 +120,7 @@ public class mainMenuController {
     		errorAlert.setHeaderText("Error");
     		errorAlert.setContentText("Your order menu cannot be loaded. Please try again.");
     		errorAlert.show();
+    		System.out.println("your exception:" + e);
     	}
     	
     }

@@ -17,7 +17,7 @@
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="subTotalField" layoutX="268.0" layoutY="100.0" onAction="#subTotalAction" />
+            <TextField fx:id="subTotalField" layoutX="268.0" layoutY="100.0" />
             <TextField fx:id="salesTaxField" layoutX="268.0" layoutY="163.0" />
             <TextField fx:id="totalAmountField" layoutX="268.0" layoutY="225.0" />
             <Text layoutX="174.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sub-total" />
@@ -26,6 +26,7 @@
             <ListView layoutX="35.0" layoutY="258.0" prefHeight="200.0" prefWidth="200.0" />
             <Button layoutX="289.0" layoutY="283.0" mnemonicParsing="false" text="Remove Selected Item" />
             <Button layoutX="310.0" layoutY="358.0" mnemonicParsing="false" text="Place Order" />
+            <Button fx:id="priceButton" layoutX="43.0" layoutY="100.0" mnemonicParsing="false" onAction="#seePriceAction" text="See Price" />
          </children>
       </AnchorPane>
    </top>

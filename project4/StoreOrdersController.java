@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 
 public class StoreOrdersController implements Initializable { 
 	
+	public mainMenuController mMenuController;
 	private int orderNumber;
 	private StoreOrders orders;
 	private OrderClass order;
@@ -46,6 +47,13 @@ public class StoreOrdersController implements Initializable {
 	 protected ObservableList<String> displayOrdersList = 
 	    		FXCollections.observableArrayList(displayList);
 	 
+	 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+	    Stage stage = new Stage();
+	 
+	 public void setMainMenu(mainMenuController controller){
+		 mMenuController = controller;
+	}
+	 
 	 @Override
 	 public void initialize(URL location, ResourceBundle resources) {
 		 orderNum.setItems(ordNum);
@@ -53,7 +61,7 @@ public class StoreOrdersController implements Initializable {
 	 }
 	 
 	 @FXML
-	 void orderNumberList(ActionEvent event) {
+	 void orderNumberList() {
 		 try {
 			 for (int i = 0; i < orders.getOrderList().size(); i++) {
 				 ordNumList.add(orders.getOrderList().get(i).getOrderNumber());

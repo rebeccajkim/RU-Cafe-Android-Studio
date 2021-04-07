@@ -23,12 +23,12 @@
             <ComboBox fx:id="selectDonutType" layoutX="34.0" layoutY="69.0" onAction="#selectDonType" prefHeight="25.0" prefWidth="247.0" promptText="Select Type of Donut" />
             <ComboBox fx:id="numberOfDonut" layoutX="35.0" layoutY="119.0" onAction="#donutAmountAction" prefHeight="25.0" prefWidth="246.0" promptText="How Many?" />
             <Button fx:id="addDonutButton" layoutX="225.0" layoutY="217.0" mnemonicParsing="false" onAction="#addDonutButtonAction" text="&gt;&gt;" />
-            <Button layoutX="225.0" layoutY="283.0" mnemonicParsing="false" text="&lt;&lt;" />
+            <Button fx:id="removeDonutButton" layoutX="225.0" layoutY="283.0" mnemonicParsing="false" onMouseClicked="#removeDonutButtonMouse" text="&lt;&lt;" />
             <Text layoutX="67.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sub Total:" />
             <TextField fx:id="donutTotalField" layoutX="175.0" layoutY="380.0" />
-            <Button fx:id="addToOrder" layoutX="207.0" layoutY="442.0" mnemonicParsing="false" text="Add to Order" />
-            <ListView fx:id="displayListView" layoutX="327.0" layoutY="170.0" prefHeight="171.0" prefWidth="115.0" />
-            <ListView fx:id="selectListView" layoutX="48.0" layoutY="170.0" prefHeight="172.0" prefWidth="115.0" />
+            <Button fx:id="addToOrder" layoutX="207.0" layoutY="442.0" mnemonicParsing="false" onMouseClicked="#addToOrderClick" text="Add to Order" />
+            <ListView fx:id="displayListView" layoutX="327.0" layoutY="170.0" prefHeight="171.0" prefWidth="147.0" />
+            <ListView fx:id="selectListView" layoutX="48.0" layoutY="170.0" prefHeight="172.0" prefWidth="137.0" />
             <ImageView fitHeight="106.0" fitWidth="100.0" layoutX="358.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../4eda66be979539579d7b5d35d6a1cb70.jpg" />
